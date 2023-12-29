@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hasnain Travels</title>
+    <link rel="shortcut icon" href="/imgs/t.png" type="image/x-icon">
+    <link rel="stylesheet" href="Styles/styles.css" />
+    <!-- BootStrap Link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="Js/index.js"></script>
+
+  </head>
+  <body>
+    <header>
+      <nav class="navMine">
+        <div id="tLogoDiv">
+          <span class="tLogo"> T</span> <span> Hasnain Travels</span>
+        </div>
+        <div id="navSecondDiv">
+          <ul>
+            <li>
+              <a class="active" href="#">Home</a>
+            </li>
+            <li><a href="#book" id="bookNowButton">Book Now</a></li>
+            <li><a id="destinationDivBtn" href="#destination">Destinations</a></li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+
+        
+          </ul>
+        </div>
+        <div class="navThirdDiv">
+          <a href="loginRegister.html">Register</a>
+          <a class="activeNav" href="loginRegister.html">Login</a>
+        </div>
+        <span onclick="handleMenuClick()" id="navBarButton">
+          <i class="fa-solid fa-bars" style="color: #4c5057;"></i>
+        </span>
+      </nav>
+    </header>
+    <div id="navigation" >
+      <div>
+        <a onclick="hideMenu()" href="#book">Book Now</a>
+        <a onclick="hideMenu()"href="#destination">Destinations</a>
+        <a onclick="hideMenu()" href="#about">About Us</a>
+        <a onclick="hideMenu()" style="color: white;" href="#">Login</a>
+        <a  onclick="hideMenu()" style="color: white"href="#">Register</a>
+      </div>
+    </div>
+    <section id="main" >
+      
+      <div class="left">
+        <p>THE BEST DEALS ON THE WORLD'S BEST DESTINATIONS</p>
+        <h1>Best Travel and destinations</h1>
+        <p id="paragraph">
+          With Hasnain Travels you can experience new travel and best tourist
+          destinations that we have to offer.
+        </p>
+        <div class="btns">
+          <div id="destinationBtn" onclick="goToDestinationSection()" class="destination">
+            <span>OUR DESTINATIONS</span>
+            <i class="fa-solid fa-circle-chevron-right fa-lg"></i>
+          </div>
+          <div onclick="goToGalleryPage()" id="ourGalleryBtn" class="gallery">
+            <i class="fa-regular fa-images"></i>
+            <span>OUR GALLERY</span>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="content">
+          <h1>Want to Visit <span class="changeContent"></span></h1>
+          <h3>You Came to The Right Place!</h3>
+          <div class="bookNowBtn">
+            <a href="#book">BOOK NOW</a>
+          </div>
+        </div>
+        <img src="imgs/mainRight.png" alt="" />
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Book Section -->
+    <section class="book" id="book">
+      <div class="container">
+        <div class="main-text">
+          <h1 style="width: 100%; text-align: center; margin-bottom: 30px;"><span>B</span>ook</h1>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 py-3 py-md-0">
+            <div class="card">
+              <img src="./imgs/book-img.png" alt="" />
+            </div>
+          </div>
+
+          <div class="col-md-6 py-3 py-md-0">
+            <form onsubmit="return validateBookNowForm(event)" action="#">
+              <label class="lAbel firstlAbel" for="dest">Destination</label>
+              <input
+                type="text"
+                id="dest"
+                class="form-control"
+                placeholder="Where To"
+              />
+              <div class="destErr">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Please Provide A Valid Destination
+              </div>
+              <br />
+              <label class="lAbel" for="howMany">No. Of People</label>
+              <input
+              id="howMany"
+                type="text"
+                class="form-control"
+                placeholder="How Many"
+              /><br />
+              <div class="nPErr">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Please Enter Number of People.
+              </div>
+              <label class="lAbel" for="arrival">Arrival Date: </label>
+              <input
+                type="date"
+                class="form-control"
+                placeholder="Arrivals"
+                id="arrival"
+              />
+              <div class="arrivalDateErr">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Please Enter Arrival Date
+              </div><br />
+              <label class="lAbel" for="leaving">Leaving: </label>
+              <input
+                type="date"
+                class="form-control"
+                placeholder="Leaving"
+                id="leaving"
+              />
+              <div class="leavingDateErr">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Please Enter Leaving Date
+              </div><br />
+              <textarea
+                class="form-control"
+                rows="5"
+                name="text"
+                id="details"
+                placeholder="Enter Your Name & Details"
+              ></textarea>
+              <div class="detailsErr">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Please Enter Details
+              </div>
+              <input type="submit" value="Book Now" class="submit" required />
+              <span class="approved">Form Submitted!</span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destination Section From here !  -->
+    <section class="destinationDiv" id="destination">
+      <div class="container">
+        <div class="main-txt">
+          <h1 style="width: 100%; text-align: center;"><span>D</span>estination</h1>
+        </div>
+
+        <div class="row" style="margin-top: 30px">
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img
+                src="./imgs/uk.png"
+                class="card-img-top"
+                alt="United Kingdom Image"
+              />
+              <div class="card-body">
+                <h3>United Kingdom</h3>
+                <p>
+                  Embark on a captivating adventure to the United Kingdom, a
+                  land where rich history meets modern vibrancy. Discover the
+                  iconic landmarks, including the majestic Tower of London, the
+                  historic Westminster Abbey, and the iconic Big Ben in the
+                  heart of London. Immerse yourself in the literary charm of
+                  Stratford-upon-Avon, the birthplace of William Shakespeare,
+                  and explore the enchanting landscapes of the Lake District.
+                  Indulge in the warmth of British hospitality with a classic
+                  afternoon tea experience. Roam the cobbled streets of charming
+                  villages, witness the royal splendor at Buckingham Palace, and
+                  traverse the mystical landscapes of Stonehenge. From the
+                  bustling streets of London to the serene countryside, the
+                  United Kingdom offers a tapestry of experiences, blending
+                  traditional elegance with contemporary allure. Let our travel
+                  agency guide you through the diverse tapestry of the UK, where
+                  every corner reveals a story waiting to be explored
+                </p>
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <h6>Price: <strong>$500</strong></h6>
+                <a onclick="handleClickDest('United Kingdom')" href="#book">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img
+                src="./imgs/us.png"
+                alt="United States IMage"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h3>United States</h3>
+                <p>
+                  Explore the vast landscapes and cultural mosaic of the United
+                  States, a nation that captivates with its diversity and
+                  innovation. Discover the towering skyscrapers of New York
+                  City, the natural wonders of Yellowstone National Park, and
+                  the iconic monuments in Washington, D.C. Immerse yourself in
+                  the cultural melting pot of cities like Los Angeles, where
+                  entertainment and creativity flourish.Traverse the scenic
+                  beauty of the Grand Canyon and the historic streets of
+                  Boston.Indulge in the eclectic flavors of American cuisine,
+                  from classic burgers to regional specialties.Dedicated to
+                  curating unforgettable journeys, our travel agency stands as a
+                  beacon for exploration and discovery. With a passion for
+                  crafting seamless travel experiences, we go beyond
+                  destinations,weaving a tapestry of moments that linger in the
+                  hearts of our clients.Our travel agency invites you to embark
+                  on a journey through the landscapes and vibrant cities that
+                  define the spirit of the United States.
+                </p>
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <h6>Price: <strong>$600</strong></h6>
+                <a onclick="handleClickDest('United States')" href="#book">Book Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img
+                src="./imgs/china.jpg"
+                class="card-img-top"
+                alt="Great wall of China Image"
+              />
+              <div class="card-body">
+                <h3>China</h3>
+                <p>
+                  Explore the captivating allure of China, a country where
+                  ancient traditions seamlessly blend with contemporary wonders.
+                  Marvel at the iconic Great Wall, an enduring symbol of China's
+                  historical richness. Immerse yourself in the vibrant energy of
+                  bustling cities like Beijing and Shanghai, where modern
+                  skyscrapers coexist with ancient temples. Traverse the
+                  serenity of classical gardens in Suzhou, discover the mystical
+                  beauty of the Terracotta Army in Xi'an, and cruise along the ancient wonders and modern marvels converge in a symphony of cultural richness and breathtaking landscapes,from the savory delights of Peking duck to
+                  the artistry of dim sum. China's landscapes offer a
+                  breathtaking diversity, from the surreal beauty of Guilin's
+                  karst mountains to the dynamic urban scenes. Our travel agency
+                  is your gateway to the myriad experiences that unfold in this
+                  East Asian treasure trove, where ancient wisdom and modern
+                  innovation converge in every corner.
+                </p>
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <h6>Price: <strong>$500</strong></h6>
+                <a onclick="handleClickDest('China')" href="#book">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top: 30px">
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img
+                src="./imgs/italy.png"
+                alt="Italy IMage"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h3>Italy</h3>
+                <p>
+                  Step into the enchanting world of Italy, where history, art,
+                  and culinary excellence converge in a celebration of the
+                  senses. Admire the enduring beauty of iconic landmarks such as
+                  the Colosseum and the Leaning Tower of Pisa. Wander through
+                  the charming streets of Rome, Florence, and Venice, each
+                  adorned with architectural marvels. Immerse yourself in the
+                  rich artistic legacy of Michelangelo, Leonardo da Vinci, and
+                  Botticelli. Indulge in the delectable flavors of Italian
+                  cuisine, from authentic pasta dishes to exquisite gelato. Our
+                  travel agency welcomes you to uncover the cultural treasures
+                  and gastronomic delights that await in the heart of Italy.
+                </p>
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                </div>
+                <h6>Price: <strong>$700</strong></h6>
+                <a onclick="handleClickDest('Italy')" href="#book">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img
+                src="./imgs/france.png"
+                class="card-img-top"
+                alt="France Image"
+              />
+              <div class="card-body">
+                <h3>France</h3>
+                <p>
+                  Embark on an enchanting journey to France, a country that
+                  seamlessly blends timeless elegance with vibrant modernity.
+                  Marvel at the iconic Eiffel Tower, symbolizing the romance and
+                  grandeur of Paris. Immerse yourself in the artistic tapestry
+                  of the Louvre and the masterpieces of renowned artists like
+                  Monet and Van Gogh.From the picturesque Mont Saint-Michel to
+                  the fashion-forward streets of Paris, each corner of France
+                  invites you to savor its unique blend of culture, history, and
+                  sophistication. Let our travel agency be your guide to
+                  unlocking the unparalleled beauty and experiences that await
+                  in the heart of Europe
+                </p>
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <h6>Price: <strong>$700</strong></h6>
+                <a onclick="handleClickDest('France')" href="#book">Book Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 py-3 py-md-0">
+            <div class="card">
+              <img
+                src="./imgs/india.png"
+                alt="India Image"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h3>India</h3>
+                <p>
+                  Experience the captivating diversity of India, where ancient
+                  traditions seamlessly blend with contemporary dynamism. Marvel
+                  at the timeless beauty of the Taj Mahal, an architectural
+                  masterpiece that tells a story of love and craftsmanship.
+                  Stroll through the vibrant streets of Delhi, Mumbai, and
+                  Jaipur, each echoing tales of history and culture. Immerse
+                  yourself in the spiritual serenity of Varanasi and the natural
+                  wonders of Kerala. Treat your taste buds to the rich and
+                  varied flavors of Indian cuisine. Our travel agency invites you to
+                  explore the vibrant tapestry of India, where every corner
+                  unfolds a new chapter in this incredible journey
+                </p>
+                <div class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <h6>Price: <strong>$400</strong></h6>
+                <a onclick="handleClickDest('India')" href="#book">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- About section -->
+    <section class="about" id="about">
+      <div class="container">
+
+        <div class="main-txt">
+          <h1 style="width: 100%; text-align: center;">About <span>Us</span></h1>
+        </div>
+
+        <div class="row" style="margin-top: 50px;">
+
+          <div class="col-md-6 py-3 py-md-0">
+            <div class="card">
+              <img src="./imgs/about-img.png" alt="">
+            </div>
+          </div>
+
+          <div id="aboutDiv" class="col-md-6 py-3 py-md-0">
+            <div class="aboutUsDivP">To Learn More About Us, Our Services , People's Reviews about their trips with us.
+              <br>Visit The Following Pages : </div>
+            
+            <a href="reviews.html">Reviews And Comments</a>
+            <a href="services.html">Check Our Services </a>
+            <a href="gallery.html">Visit Our Gallery</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <footer id="MainFooter">
+      <h1><span>C</span>ontact Us</h1>
+      <p>You Can Contact Us at Our Gmail, hasnaintravels123@gmail.com or Follow US On Social Media Accounts.</p>
+      <div class="social-links">
+        <i onclick="goToPage(`https://twitter.com/home`)" class="fa-brands fa-twitter"></i>
+        <i onclick="goToPage(`https://facebook.com/home`)" class="fa-brands fa-facebook"></i>
+        <i onclick="goToPage(`https://instagram.com`)" class="fa-brands fa-instagram"></i>
+        <i onclick="goToPage(`https://youtube.com`)" class="fa-brands fa-youtube"></i>
+        <i onclick="goToPage(`https://pinterest.com/home`)" class="fa-brands fa-pinterest-p"></i>
+      </div>
+     
+      <div class="copyright">
+        <p>&copy;Copyright Hasnain Travels. All Rights Reserved</p>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/3cdde02739.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+         const destination = document.getElementById("dest");
+         const noP = document.getElementById("howMany");
+         const lDate = document.getElementById("leaving");
+         const aDate = document.getElementById("arrival");
+         const details=document.getElementById("details");
+         function validateBookNowForm(event) {
+            event.preventDefault();
+
+          if (destination.value == "") {
+               document.getElementsByClassName("destErr")[0].setAttribute("id", "visible");
+               setTimeout(() => {
+                 document.getElementsByClassName("destErr")[0].removeAttribute("id");
+               }, 2000);
+
+               return false;
+           }
+          if (noP.value == "") {
+               document.getElementsByClassName("nPErr")[0].setAttribute("id", "visible");
+               setTimeout(() => {
+                 document.getElementsByClassName("nPErr")[0].removeAttribute("id");
+               }, 2000);
+           
+               return false;
+          }
+              if (lDate.value == "") {
+             document.getElementsByClassName("arrivalDateErr")[0].setAttribute("id", "visible");
+             setTimeout(() => {
+               document.getElementsByClassName("arrivalDateErr")[0].removeAttribute("id");
+             }, 2000);
+
+             return false;
+          }
+               if (aDate.value == "") {
+             document.getElementsByClassName("leavingDateErr")[0].setAttribute("id", "visible");
+             setTimeout(() => {
+               document.getElementsByClassName("leavingDateErr")[0].removeAttribute("id");
+             }, 2000);
+
+             return false;
+          }
+           if(details.value==""){
+              document.getElementsByClassName("detailsErr")[0].setAttribute("id", "visible");
+             setTimeout(() => {
+               document.getElementsByClassName("detailsErr")[0].removeAttribute("id");
+             }, 2000);
+           }
+             let app=document.getElementsByClassName("approved")[0];
+             app.setAttribute("id","visibleSpan");
+             setTimeout(() => {
+               app.removeAttribute("id");
+             }, 2000);
+
+             details.value=""
+             noP.value=""
+             destination.value=''
+             lDate.value=""
+             aDate.value=""
+             return true;
+         }
+          const destInput = document.getElementById("dest");
+          function handleClickDest(x) {
+              console.log(x);
+              destInput.value = x;
+}
+    </script>
+   
+  </body>
+</html>

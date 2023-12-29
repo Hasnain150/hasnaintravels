@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LogIn or Sign Up</title>
+    <link rel="stylesheet" href="Styles/logIn.css" />
+    <link rel="shortcut icon" href="imgs/loginLogo.jpg" type="image/x-icon" />
+    <!-- google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <!-- BootStrap Link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row row-cols-sm-1">
+        <a id="BackBtn" href="index.html">Back To Home </a>
+        <div id="one" class="col-2 col-sm-12 col-md-2 sidePanel">
+          <a href="index.html">Back To Home</a>
+          <h1>LogIn</h1>
+        </div>
+        <div class="col-10 mainBk">
+          <div class="row">
+            <div id="formDivPr">
+              <div class="btns">
+                <button id="logBtn" class="active" onclick="logInBtn()">
+                  LogIn
+                </button>
+                <button id="signBtn" onclick="signUpBtn()">SignUp</button>
+              </div>
+              <div class="formDiv">
+                <form
+                  class="logInForm"
+                  style="position: relative"
+                  id="visible"
+                  onsubmit="return validateLogInForm(event)"
+                  action="#"
+                >
+                  <label for="logInEmail">Your Email Address</label>
+                  <input
+                    type="text"
+                    placeholder="Email Address"
+                    id="logInEmail"
+                  />
+                  <div class="logInEmailErr1">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Please
+                    Enter Your Email
+                  </div>
+                  <div class="logInEmailErr2">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Email
+                    Address Not Found
+                  </div>
+                  <br />
+                  <label for="LogInpwd">Your Password</label>
+                  <span style="position: relative">
+                    <input
+                      type="password"
+                      placeholder="Password"
+                      id="LogInpwd"
+                    />
+
+                    <i
+                      onclick="handleLogInBtnToggle()"
+                      id="psdToggleLogIn"
+                      class="fa-solid fa-eye"
+                    ></i>
+                  </span>
+
+                  <div class="logInpwdErr1">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Please
+                    Enter A Password.
+                  </div>
+                  <div class="logInpwdErr2">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Password
+                    Incorrect
+                  </div>
+                  <input id="logInSubmit" type="submit" value="Log In" />
+                </form>
+                <form
+                  style="position: relative"
+                  class="signUpForm"
+                  onsubmit="return validateSignUpForm(event)"
+                  action=""
+                >
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" placeholder="Full Name" />
+                  <div class="SignUpNameErr1">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Please
+                    Enter Your Name
+                  </div>
+                  <div class="SignUpNameErr2">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Please
+                    Enter a Valid Full Name
+                  </div>
+                  <br />
+                  <label for="email">Email Address</label>
+                  <input type="text" placeholder="Email Address" id="email" />
+                  <div class="SignUpEmailErr1">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Please
+                    Enter an Email Address
+                  </div>
+                  <div class="SignUpEmailErr2">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Please
+                    Enter a Valid Email Address
+                  </div>
+                  <br />
+                  <label for="pwd">Password</label>
+                  <span style="position: relative">
+                    <input type="password" placeholder="Password" id="pwd" />
+                    <i
+                      onclick="handleSignUpBtnToggle()"
+                      id="psdToggleSignUp"
+                      class="fa-solid fa-eye"
+                    ></i>
+                  </span>
+                  <div class="SignUpPwdErr1">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Please
+                    Enter a Password
+                  </div>
+                  <div class="SignUpPwdErr2">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Please
+                    Provide a Strong Password.
+                  </div>
+                  <br />
+
+                  <label for="country">Country</label>
+                  <input type="text" id="country" placeholder="Country" />
+                  <div class="SignUpCountryErr1">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Please
+                    Enter Your Country Name
+                  </div>
+
+                  <br />
+                  <label for="pNo">Mobile Phone</label>
+                  <input
+                    type="text"
+                    id="pNo"
+                    placeholder="Mobile Phone Number"
+                  />
+                  <div class="SignUpPhErr1">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Please
+                    Enter Your Mobile Number
+                  </div>
+                  <div class="SignUpPhErr2">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Please
+                    Provide a 11 digit Valid Phone Number
+                  </div>
+                  <br />
+                  <input id="signUpSubmit" type="submit" value="Sign Up" />
+                  <div class="accountCreated">
+                    Account Created SuccessFully!
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/3cdde02739.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="Js/logIn.js"></script>
+  </body>
+</html>

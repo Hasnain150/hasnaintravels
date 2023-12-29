@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="imgs/commentsLogo.jpg" type="image/x-icon">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="Styles/reviewsStyles.css" />
+  </head>
+  <body onload="handleClick()">
+    <a href="index.html" id="hPageBtn" ">Back To Home </a>
+    <section id="reviewsSection">
+      <div class="container">
+        <div class="row row-cols-1">
+          <div id="rText" class="col col-12">Reviews</div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2">
+          <!-- left div -->
+          <div class="col col-12 col-md-6">
+            <div id="commentsRow" class="row px-5 py-2">
+              <div id="buttonDiv" class="col col-2 py-5">
+                <button onclick="handleArrowUp()">
+                  <i
+                    class="fa-solid fa-circle-arrow-up"
+                    style="color: #b0bbcf"
+                  ></i>
+                </button>
+                <button onclick="handleArrowDown()">
+                  <i class="fa-solid fa-circle-arrow-down"></i>
+                </button>
+              </div>
+              <div id="commmentsDiv" class="col col-10">
+                <!-- comments div -->
+                <img src="imgs/avata1.png" />
+                <p style="font-size: 35px" id="nameP">ALi</p>
+                <span class="star">
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star checked"></i>
+                  <i class="fa-solid fa-star"></i>
+                </span>
+                <p>
+                  "A very Pleasent experience, plus the service is very friendly
+                  , recommended for those who want to try"
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- right Div -->
+          <div id="tDiv" class="col col-12 col-md-6 mx-sm-auto">
+            <h1>Testimonials Hasnain Travels Customer</h1>
+            <p>What our customers hace to say about our service</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="commentsSection">
+      <div class="container">
+        <div class="row py-3 px-3 text-center">
+          <h1>Your Comment Here!</h1>
+        </div>
+        <div class="row row-cols-sm-1 row-cols-md-2 ">
+          <div class="col">
+            <form onsubmit="return validateForm(event)" >
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter your name"
+                />
+                <div class="nameEmptyErr">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  Please Enter Your Name
+                </div>
+                <div class="nameEmptyErr2">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  Enter A Valid Name
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="rating" class="form-label">Rating</label>
+                <select class="form-select" id="rating">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <div  class="ratingErr">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  Please Select One Option
+                </div>
+               
+              </div>
+
+              <div class="mb-3">
+                <label for="comment" class="form-label">Comment</label>
+                <textarea class="form-control" id="comment" rows="3"></textarea>
+                <div  class="commentErr">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  Please Write a Comment
+                </div>
+              </div>
+
+              <input
+                type="submit"
+                
+                class="btn btn-primary"
+              >
+            </input>
+            <span class="approved">Comment Added!</span>
+            </form>
+          </div>
+          <div class="col py-5 px-5 text-center">
+            <h2
+              style="
+                width: 400px;
+                margin-left: 40px;
+                margin-top: 40px;
+                color: #ffa500;
+              "
+            >
+              If You have ever Travelled with us , Feel Free to Comment.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer id="reviewsFooter">
+      <h1><span>C</span>ontact Us</h1>
+      <p>
+        You Can Contact Us at Our Gmail, hasnaintravels123@gmail.com or Follow
+        US On Social Media Accounts.
+      </p>
+      <div class="social-links">
+        <i
+          onclick="goToPage(`https://twitter.com/home`)"
+          class="fa-brands fa-twitter"
+        ></i>
+        <i
+          onclick="goToPage(`https://facebook.com/home`)"
+          class="fa-brands fa-facebook"
+        ></i>
+        <i
+          onclick="goToPage(`https://instagram.com`)"
+          class="fa-brands fa-instagram"
+        ></i>
+        <i
+          onclick="goToPage(`https://youtube.com`)"
+          class="fa-brands fa-youtube"
+        ></i>
+        <i
+          onclick="goToPage(`https://pinterest.com/home`)"
+          class="fa-brands fa-pinterest-p"
+        ></i>
+      </div>
+
+      <div class="copyright">
+        <p>&copy;Copyright Hasnain Travels. All Rights Reserved</p>
+      </div>
+    </footer>
+    <script src="Js/reviews.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
